@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Number</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="switch-container">
+            <label class="switch">
+                <input type="checkbox" id="themeSwitch">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <h1>Lucky Number</h1>
+
+        <!-- Numbers from 0 to 9 -->
+        <div id="numbersContainer" class="numbers-container"></div>
+
+        <!-- Submit button -->
+        <button id="submitBtn">Submit</button>
+
+        <!-- Result message -->
+        <p id="resultMessage"></p>
+
+        <!-- Timer countdown -->
+        <p id="timerMessage"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

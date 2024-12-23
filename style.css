@@ -1,0 +1,240 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for the lucky number box */
+.number-container.lucky-number {
+    background-color: #006400; /* Deep green */
+    color: white; /* Ensure the number is visible */
+    transform: scale(1.1); /* Slightly enlarge the box */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    width: 400px;
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Numbers grid container */
+.numbers-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+/* Individual number container */
+.number-container {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.number-container:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+.number-container.selected {
+    background-color: #4caf50;
+}
+
+/* Number display */
+.number-container span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Controls container */
+.controls-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Control buttons */
+.control-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.control-btn:hover {
+    opacity: 0.8;
+}
+
+.decrement {
+    background-color: #f44336;
+    color: white;
+}
+
+.increment {
+    background-color: #2196f3;
+    color: white;
+}
+
+/* Amount display */
+.amount-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
+
+/* Submit button */
+button {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #5c6bc0;
+    transform: translateY(-2px);
+}
+
+/* Theme toggle */
+.switch-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* Light mode styles */
+body.light-mode {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+body.light-mode .container {
+    background-color: lightskyblue;
+}
+
+body.light-mode .number-container {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body.light-mode .number-container:hover {
+    background-color: #f5f5f5;
+}
+
+body.light-mode .number-container.selected {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .numbers-container {
+        gap: 10px;
+    }
+    
+    .number-container {
+        padding: 10px;
+    }
+    
+    .number-container span {
+        font-size: 1.2rem;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
